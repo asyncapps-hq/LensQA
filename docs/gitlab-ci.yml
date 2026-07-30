@@ -1,0 +1,15 @@
+# GitLab CI example
+stages: [test]
+
+visual:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.61.0-noble
+  script:
+    - npm ci
+    - npm run build -w @lensqa/shared
+    - npm run test -w @lensqa/runner
+  artifacts:
+    when: always
+    paths:
+      - packages/runner/playwright-report/
+      - packages/runner/test-results/

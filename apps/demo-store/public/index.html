@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-lensqa-ok>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LensQA demo storefront for deterministic visual QA" />
+  <title>Lumen Market</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Lumen Market</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Shop</a>
+      <a href="/cart">Cart</a>
+      <a href="/checkout">Checkout</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">Deterministic demo</span>
+      <h1>Everyday gear, zero layout surprises.</h1>
+      <p>This storefront is the LensQA fixture. Stock numbers change; the checkout button must never disappear on mobile.</p>
+    </section>
+    <section class="grid" aria-label="Products">
+      <article class="card">
+        <div class="swatch">Aurora Lamp</div>
+        <h2>Aurora Lamp</h2>
+        <p class="price">$48.00</p>
+        <p class="muted live-stock" data-stock>In stock: 12</p>
+        <a class="btn" href="/cart">Add to cart</a>
+      </article>
+      <article class="card">
+        <div class="swatch">Orbit Mug</div>
+        <h2>Orbit Mug</h2>
+        <p class="price">$18.00</p>
+        <p class="muted live-stock" data-stock>In stock: 34</p>
+        <a class="btn" href="/cart">Add to cart</a>
+      </article>
+      <article class="card">
+        <div class="swatch">Nimbus Pack</div>
+        <h2>Nimbus Pack</h2>
+        <p class="price">$96.00</p>
+        <p class="muted live-stock" data-stock>In stock: 7</p>
+        <a class="btn" href="/cart">Add to cart</a>
+      </article>
+    </section>
+  </main>
+  <footer class="creator-credit">
+    LensQA demo by <a href="https://github.com/KhyFee">KhyFee</a>
+  </footer>
+  <script>
+    // ponytail: frozen clock/random for visual stability when LENSQA_FREEZE=1
+    if (location.search.includes('freeze=1') || document.documentElement.dataset.freeze === '1') {
+      document.querySelectorAll('[data-stock]').forEach((el, i) => {
+        el.textContent = 'In stock: ' + (10 + i * 5)
+      })
+    } else {
+      document.querySelectorAll('[data-stock]').forEach((el) => {
+        el.textContent = 'In stock: ' + (Math.floor(Math.random() * 40) + 1)
+      })
+    }
+  </script>
+</body>
+</html>

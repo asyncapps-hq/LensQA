@@ -1,0 +1,40 @@
+{
+  "name": "@lensqa/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test lib/signing.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@lensqa/shared": "*",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.49.1",
+    "animejs": "^4.0.2",
+    "next": "^16.2.12",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "author": "KhyFee (https://github.com/KhyFee)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhyFee/LensQA.git"
+  },
+  "homepage": "https://github.com/KhyFee/LensQA#readme",
+  "bugs": {
+    "url": "https://github.com/KhyFee/LensQA/issues"
+  }
+}

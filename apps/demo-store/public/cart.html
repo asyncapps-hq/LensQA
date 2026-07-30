@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-lensqa-ok>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cart — Lumen Market" />
+  <title>Cart · Lumen Market</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Lumen Market</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Shop</a>
+      <a href="/cart" aria-current="page">Cart</a>
+      <a href="/checkout">Checkout</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <h1>Your cart</h1>
+    <div class="cart-layout">
+      <section aria-label="Cart items">
+        <div class="line">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <strong>Aurora Lamp</strong>
+            <p class="muted">Warm LED · Matte brass</p>
+            <p class="live-stock" id="stock">Qty 1 · Stock fluctuates</p>
+          </div>
+          <div class="price">$48.00</div>
+        </div>
+        <div class="line">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <strong>Orbit Mug</strong>
+            <p class="muted">Ceramic · 350ml</p>
+            <p class="muted">Qty 2</p>
+          </div>
+          <div class="price">$36.00</div>
+        </div>
+      </section>
+      <aside class="summary" aria-label="Order summary">
+        <h2>Summary</h2>
+        <div class="row"><span>Subtotal</span><span>$84.00</span></div>
+        <div class="row"><span>Shipping</span><span>$6.00</span></div>
+        <div class="row total"><span>Total</span><span>$90.00</span></div>
+        <a
+          id="checkout-btn"
+          class="btn checkout-cta"
+          href="/checkout"
+          data-testid="checkout-button"
+        >Proceed to checkout</a>
+        <a class="btn ghost" href="/" style="width:100%;margin-top:0.5rem">Continue shopping</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="creator-credit">
+    LensQA demo by <a href="https://github.com/KhyFee">KhyFee</a>
+  </footer>
+  <script>
+    const stock = document.getElementById('stock')
+    if (location.search.includes('freeze=1')) {
+      stock.textContent = 'Qty 1 · Stock 12'
+    } else {
+      stock.textContent = 'Qty 1 · Stock ' + (Math.floor(Math.random() * 20) + 1)
+    }
+  </script>
+</body>
+</html>

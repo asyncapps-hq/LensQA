@@ -1,0 +1,41 @@
+{
+  "name": "lensqa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frontend Quality Cloud — visual, a11y, performance, and runtime QA",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @lensqa/web",
+    "dev:store": "npm run start -w @lensqa/demo-store",
+    "build": "npm run build -w @lensqa/shared && npm run build -w @lensqa/sdk && npm run build -w @lensqa/runner && npm run build -w @lensqa/web",
+    "test": "npm run test -w @lensqa/shared && npm run test -w @lensqa/runner && npm run test -w @lensqa/web",
+    "test:visual": "npm run test -w @lensqa/runner",
+    "demo:regression": "npm run demo:regression -w @lensqa/runner",
+    "lint": "npm run lint -w @lensqa/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:reset": "npx supabase db reset",
+    "db:types": "npx supabase gen types typescript --local > packages/shared/src/database.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "author": "KhyFee (https://github.com/KhyFee)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhyFee/LensQA.git"
+  },
+  "homepage": "https://github.com/KhyFee/LensQA#readme",
+  "bugs": {
+    "url": "https://github.com/KhyFee/LensQA/issues"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.18",
+      "sharp": "0.35.0"
+    }
+  }
+}

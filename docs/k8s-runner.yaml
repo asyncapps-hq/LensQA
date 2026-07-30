@@ -1,0 +1,31 @@
+# Kubernetes example for self-hosted LensQA runners
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lensqa-runner
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lensqa-runner
+  template:
+    metadata:
+      labels:
+        app: lensqa-runner
+    spec:
+      containers:
+        - name: runner
+          image: mcr.microsoft.com/playwright:v1.61.0-noble
+          env:
+            - name: LENSQA_API_URL
+              value: https://your.app
+            - name: LENSQA_ENROLLMENT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: lensqa-runner
+                  key: token
+          command: ["bash", "-lc", "npx playwright test"]
+          resources:
+            limits:
+              memory: 2Gi
+              cpu: "2"

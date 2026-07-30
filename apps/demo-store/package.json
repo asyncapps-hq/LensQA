@@ -1,0 +1,18 @@
+{
+  "name": "@lensqa/demo-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "author": "KhyFee (https://github.com/KhyFee)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhyFee/LensQA.git"
+  },
+  "homepage": "https://github.com/KhyFee/LensQA#readme",
+  "bugs": {
+    "url": "https://github.com/KhyFee/LensQA/issues"
+  }
+}

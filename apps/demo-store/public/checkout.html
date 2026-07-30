@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" data-lensqa-ok>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Checkout — Lumen Market" />
+  <title>Checkout · Lumen Market</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Lumen Market</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Shop</a>
+      <a href="/cart">Cart</a>
+      <a href="/checkout" aria-current="page">Checkout</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <h1>Checkout</h1>
+    <form class="summary" style="max-width:420px" onsubmit="event.preventDefault(); alert('Demo only')">
+      <label class="muted" for="email">Email</label>
+      <input id="email" name="email" type="email" value="buyer@example.com" readonly style="width:100%;margin:0.4rem 0 1rem;padding:0.7rem;border-radius:10px;border:1px solid var(--border)" />
+      <label class="muted" for="card">Card</label>
+      <input id="card" name="card" value="4242 4242 4242 4242" readonly style="width:100%;margin:0.4rem 0 1rem;padding:0.7rem;border-radius:10px;border:1px solid var(--border)" />
+      <button class="btn checkout-cta" type="submit" data-testid="pay-button">Pay $90.00</button>
+    </form>
+  </main>
+  <footer class="creator-credit">
+    LensQA demo by <a href="https://github.com/KhyFee">KhyFee</a>
+  </footer>
+</body>
+</html>

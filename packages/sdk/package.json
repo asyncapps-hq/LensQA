@@ -1,0 +1,27 @@
+{
+  "name": "@lensqa/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@lensqa/shared": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "author": "KhyFee (https://github.com/KhyFee)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhyFee/LensQA.git"
+  },
+  "homepage": "https://github.com/KhyFee/LensQA#readme",
+  "bugs": {
+    "url": "https://github.com/KhyFee/LensQA/issues"
+  }
+}
