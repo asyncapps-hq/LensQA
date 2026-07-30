@@ -1,17 +1,6 @@
 # LensQA architecture
 
-```mermaid
-flowchart LR
-  developer[Developer] --> gha[GitHubActions]
-  gha --> runner[LensQARunner]
-  runner --> store[DemoStore]
-  runner --> ingest[IngestAPI]
-  runner --> storage[PrivateArtifacts]
-  ingest --> db[SupabasePostgres]
-  reviewer[Reviewer] --> web[NextDashboard]
-  web --> db
-  web --> storage
-```
+![LensQA architecture](architecture.svg)
 
 ## Packages
 - `apps/web` — Next.js dashboard + marketing

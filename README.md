@@ -59,16 +59,7 @@ Open:
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  developer[Developer] --> gha[GitHubActions]
-  gha --> runner[LensQARunner]
-  runner --> store[DemoStore]
-  runner --> ingest[IngestAPI]
-  ingest --> db[SupabasePostgres]
-  reviewer[Reviewer] --> web[NextDashboard]
-  web --> db
-```
+![LensQA architecture](docs/architecture.svg)
 
 Browsers only run in the Playwright container / CI. The hosted dashboard never executes untrusted browser jobs.
 
