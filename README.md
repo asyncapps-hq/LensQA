@@ -6,6 +6,12 @@ Created and maintained by [KhyFee](https://github.com/KhyFee).
 
 LensQA is a portfolio-grade frontend quality platform: deterministic Playwright workers inspect **visual**, **accessibility**, **performance**, **network**, **responsive**, **SEO**, and **runtime** quality, while a cinematic Next.js dashboard manages teams, live runs, private artifacts, baseline governance, analytics, and integrations.
 
+## Open-source release
+
+LensQA was developed privately before its initial public release. It is now open source so developers can use it freely, learn from it, report problems, and improve it together.
+
+The project uses the [MIT License](LICENSE). Contributions are welcome—see [CONTRIBUTING.md](CONTRIBUTING.md) and the public roadmap in GitHub Issues.
+
 ## Why it exists
 
 E-commerce teams lose money when a bad CSS merge hides the mobile checkout button. Shift-left visual + quality automation is table stakes for remote hiring in 2026. LensQA proves you can ship the product *and* the QA system around it.
